@@ -11,7 +11,7 @@ if you could categories snippets into folders and files.
     $ git clone https://github.com/Rafi993/Vscode-snippet-generator.git
     $ cd Vscode-snippet-generator
     ```
-2. Just create a new folder in this project root (folder name as .json file name you want)
+2. Just create a new folder in this project (folder name will be used as .json file name example **react**)
 3. Create markdown file for snippet inside that folder
 4. Follow the below format for writing snippet
     ```
@@ -26,7 +26,7 @@ if you could categories snippets into folders and files.
    ```
     $ node ./generator.js
    ```
-6. Copy your .json file (name will be same as the folder you created) and paste it into vscode
+6. Copy your .json file (name will be same as the folder you created example **react.json**) and paste it into vscode
 
 
 ### Todo
