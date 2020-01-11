@@ -1,0 +1,22 @@
+{
+  "component using Flow": {
+    "prefix": "rc",
+    "body": [
+      "// @flow",
+      "",
+      "import React from 'react';",
+      "",
+      "type Props = {",
+      "",
+      "}",
+      "",
+      "const $1 = ({ } :Props)=> {",
+      "",
+      "};",
+      "",
+      "",
+      "export default $1;"
+    ],
+    "description": "Creates functional React component that uses flow"
+  }
+}
