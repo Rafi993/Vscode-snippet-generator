@@ -3,16 +3,21 @@ const path = require("path");
 
 const { getLabelValue } = require("./utils.js");
 
-const listFiles = async folderName => {
+const listFiles = async ({ folderName, isChild }) => {
   const children = await fs.readdir(folderName, { withFileTypes: true });
   const markDownFiles = children
     .filter(file => file.name.includes(".md"))
     .map(file => file.name);
-  const folders = children.filter(child => !child.isFile());
+  const folders = children.filter(
+    child => !child.isFile() && child.name[0] !== "."
+  );
   let snippet = {};
 
   for (const folder of folders) {
-    listFiles(path.join(folderName, folder.name));
+    listFiles({
+      folderName: path.join(folderName, folder.name),
+      isChild: true
+    });
   }
 
   for (const fileName of markDownFiles) {
@@ -35,17 +40,20 @@ const listFiles = async folderName => {
     const description = getLabelValue(fileContent[3], "Description:");
 
     snippet = {
+      ...snippet,
       [snippetName]: {
         prefix,
         body,
         description
       }
     };
+  }
 
+  if (isChild && Object.keys(snippet).length !== 0) {
     console.log(`* ${folderName}.json`);
     await fs.writeFile(`${folderName}.json`, JSON.stringify(snippet, null, 2));
   }
 };
 
 console.log("Writing snippets to\n");
-listFiles(path.resolve());
+listFiles({ folderName: path.resolve(), isChild: false });

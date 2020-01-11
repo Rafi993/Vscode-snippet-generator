@@ -1,17 +1,16 @@
 -----------------------------------------
-Name: component using Flow
+Name: component
 Prefix: rc
-Description: Creates functional React component that uses flow 
+Description: Functional React component 
 -----------------------------------------
-// @flow
 
 import React from 'react';
 
-type Props = {
+interface Props  {
 
 }
 
-const $1 = ({ } :Props)=> {
+const $1React.FC<Props> = ({ })=> {
 
 };
 

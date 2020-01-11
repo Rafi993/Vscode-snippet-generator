@@ -1,0 +1,63 @@
+{
+  "component": {
+    "prefix": "rc",
+    "body": [
+      "",
+      "import React from 'react';",
+      "",
+      "interface Props  {",
+      "",
+      "}",
+      "",
+      "const $1React.FC<Props> = ({ })=> {",
+      "",
+      "};",
+      "",
+      "",
+      "export default $1;"
+    ],
+    "description": "Functional React component"
+  },
+  "component with state": {
+    "prefix": "rcs",
+    "body": [
+      "",
+      "import React, { useState } from 'react';",
+      "",
+      "interface Props  {",
+      "",
+      "}",
+      "",
+      "const $1React.FC<Props> = ({ })=> {",
+      "  const [$2, $3] = useState($4);",
+      "",
+      "};",
+      "",
+      "",
+      "export default $1;"
+    ],
+    "description": "Functional React component with state"
+  },
+  "connected component": {
+    "prefix": "crc",
+    "body": [
+      "import { connect } from 'react-redux';",
+      "import React, { useState } from 'react';",
+      "",
+      "interface Props  {",
+      "",
+      "}",
+      "",
+      "const $1React.FC<Props> = ({ })=> {",
+      "  const [$2, $3] = useState($4);",
+      "",
+      "};",
+      "",
+      "",
+      "const mapStateToProps = ()=> ({})",
+      "",
+      "export default connect(mapStateToProps)($1);"
+    ],
+    "description": "Connected functional React component"
+  }
+}
